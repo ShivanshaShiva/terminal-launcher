@@ -1,0 +1,44 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules in the project.
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.0'  // Use the latest stable version
+    }
+}
+
+// This is the identifier for the project used in the Gradle build system
+apply plugin: 'com.android.application'
+
+// Android configuration block
+android {
+    compileSdk 33  // Choose the latest SDK version
+
+    defaultConfig {
+        applicationId "com.example.terminal_launcher"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+// Dependencies block for managing library dependencies
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
