@@ -1,0 +1,2 @@
+// settings.gradle for the terminal-launcher project
+rootProject.name = 'terminal-launcher'
